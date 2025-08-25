@@ -96,5 +96,6 @@ dependencies {
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.2.0")
     implementation("androidx.navigation:navigation-compose:2.9.3")
     runtimeOnly("io.sentry:sentry-android:8.19.1")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.6.8")
 
 }
