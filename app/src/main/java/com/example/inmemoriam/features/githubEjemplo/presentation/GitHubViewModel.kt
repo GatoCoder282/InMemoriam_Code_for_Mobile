@@ -1,15 +1,14 @@
-package com.example.inmemoriam.presentation
+package com.example.inmemoriam.features.githubEjemplo.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.inmemoriam.domain.usecase.FindPhotobyNickNameUseCase
-import com.example.inmemoriam.domain.model.UserModel
+import com.example.inmemoriam.features.githubEjemplo.domain.model.UserModel
+import com.example.inmemoriam.features.githubEjemplo.domain.usecase.FindPhotobyNickNameUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
 
 class GitHubViewModel(
     val usecase: FindPhotobyNickNameUseCase

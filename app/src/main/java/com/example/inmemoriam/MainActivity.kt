@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.inmemoriam.presentation.GitHubScreen
+import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubScreen
 import com.example.inmemoriam.ui.theme.InMemoriamTheme
 
 class MainActivity : ComponentActivity() {

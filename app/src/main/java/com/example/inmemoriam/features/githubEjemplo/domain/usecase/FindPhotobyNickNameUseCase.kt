@@ -1,7 +1,7 @@
-package com.example.inmemoriam.domain.usecase
+package com.example.inmemoriam.features.githubEjemplo.domain.usecase
 
-import com.example.inmemoriam.domain.model.UserModel
-import com.example.inmemoriam.domain.respository.IdGitHubRepository
+import com.example.inmemoriam.features.githubEjemplo.domain.model.UserModel
+import com.example.inmemoriam.features.githubEjemplo.domain.repository.IdGitHubRepository
 import kotlinx.coroutines.delay
 
 class FindPhotobyNickNameUseCase(

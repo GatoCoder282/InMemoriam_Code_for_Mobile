@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.inmemoriam.presentation.GitHubScreen
+import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubScreen
 
 @Composable
 fun AppNavigation() {

@@ -1,7 +1,7 @@
-package com.example.inmemoriam.data.repository
+package com.example.inmemoriam.features.githubEjemplo.data.repository
 
-import com.example.inmemoriam.domain.model.UserModel
-import com.example.inmemoriam.domain.respository.IdGitHubRepository
+import com.example.inmemoriam.features.githubEjemplo.domain.model.UserModel
+import com.example.inmemoriam.features.githubEjemplo.domain.repository.IdGitHubRepository
 
 class GithubRepository: IdGitHubRepository {
     override fun findByNick(value: String): Result<UserModel> {

@@ -1,4 +1,4 @@
-package com.example.inmemoriam.presentation
+package com.example.inmemoriam.features.githubEjemplo.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.Column
@@ -16,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import androidx.compose.foundation.layout.size
+import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubViewModel
 
 @Composable
 fun GitHubScreen(modifier: Modifier,
