@@ -19,6 +19,10 @@ sentry = "4.11.0"
 ktlint = "12.1.1"
 detekt = "1.23.3"
 fonts = "1.6.8"
+googleGmsGoogleServices = "4.4.3"
+firebaseDatabase = "22.0.0"
+cardview = "1.0.0"
+roomKtx = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +48,9 @@ coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCo
 coil-network = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navcompose"}
 fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "fonts"}
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+cardview = {group="androidx.cardview",name = "cardview", version.ref = "cardview"}
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
 
 
 [plugins]
@@ -53,3 +60,4 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 ktlint = {id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint"}
 sentry = {id = "io.sentry.android.gradle", version.ref = "sentry"}
 detekt = {id = "io.gitlab.arturbosch.detekt",version.ref = "detekt"}
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

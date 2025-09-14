@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1058927014425",
+    "project_id": "gatovaldez282",
+    "storage_bucket": "gatovaldez282.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058927014425:android:1bf324b1f1f107a4343088",
+        "android_client_info": {
+          "package_name": "com.example.inmemoriam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIIaEjrQbWaiJ1tYG0FdTDmCbLqj1dMBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

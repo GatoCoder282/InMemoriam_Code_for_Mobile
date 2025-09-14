@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">InMemoriam</string>
+    <string name="home_welcome_text">Bienvenido de nuevo %s!</string>
+    <string name="gitalias_input">Ingrese la cuenta de github</string>
+    <string name="gitalias_btn_find">Buscar</string>
+    <string name="app_name">In Memoriam</string>
+    <string name="welcome_message">Bienvenido/a a In Memoriam</string>
+    <string name="home">Inicio</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="reminders">Recordatorios</string>
+    <string name="settings">Configuración</string>
+    <string name="help">Ayuda</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="signup_title">Crear Cuenta</string>
+    <string name="email_input">Correo Electrónico</string>
+    <string name="password_input">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="no_account_text">¿No tienes una cuenta? Regístrate</string>
+    <string name="confirm_password_input">Repite la Contraseña</string>
+    <string name="signup_button">Registrarme</string>
+    <string name="profile_title">Perfil de %s</string>
+    <string name="create_profile_button">Crear Perfil Conmemorativo</string>
+    <string name="upload_photos_option">Subir fotos</string>
+    <string name="upload_videos_option">Subir videos</string>
+    <string name="upload_audios_option">Subir audios</string>
+    <string name="obituaries_section_title">Obituarios</string>
+    <string name="anecdotes_section_title">Anécdotas</string>
+    <string name="add_anecdote_hint">Escribe una anécdota...</string>
+    <string name="save_button">Guardar</string>
+    <string name="privacy_settings_title">Opciones de Privacidad</string>
+    <string name="public_profile_option">Perfil Público</string>
+    <string name="private_profile_option">Perfil Privado</string>
+    <string name="invite_collaborators_button">Invitar a colaboradores</string>
+    <string name="family_members_title">Miembros de la Familia</string>
+    <string name="timeline_title">Línea de Tiempo</string>
+    <string name="search_button">Buscar</string>
+    <string name="search_hint">Buscar perfiles...</string>
+    <string name="error_message">Ocurrió un error. Intenta de nuevo.</string>
+    <string name="success_message">¡Guardado con éxito!</string>
 </resources>
+

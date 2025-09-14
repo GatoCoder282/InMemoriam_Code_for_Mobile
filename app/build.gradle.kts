@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.ktlint)
     alias(libs.plugins.sentry)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.google.gms.google.services)
 }
 sentry {
     autoUploadProguardMapping = true }
@@ -80,6 +81,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.firebase.database)
+    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -97,5 +100,6 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.9.3")
     runtimeOnly("io.sentry:sentry-android:8.19.1")
     implementation("androidx.compose.ui:ui-text-google-fonts:1.6.8")
+    implementation("androidx.cardview:cardview:1.0.0")
 
 }
