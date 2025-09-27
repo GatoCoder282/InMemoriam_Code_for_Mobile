@@ -1,9 +1,12 @@
 package com.example.inmemoriam.features.githubEjemplo.presentation
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.inmemoriam.features.githubEjemplo.domain.error.Failure
 import com.example.inmemoriam.features.githubEjemplo.domain.model.UserModel
 import com.example.inmemoriam.features.githubEjemplo.domain.usecase.FindPhotobyNickNameUseCase
+import com.example.inmemoriam.features.githubEjemplo.presentation.error.ErrorMessageProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +14,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class GitHubViewModel(
-    val usecase: FindPhotobyNickNameUseCase
+    val usecase: FindPhotobyNickNameUseCase,
+    val context: Context
 ): ViewModel() {
     sealed class GithubStateUI {
         object Init: GithubStateUI()
@@ -24,6 +28,8 @@ class GitHubViewModel(
     val state : StateFlow<GithubStateUI> = _state.asStateFlow()
 
     fun fetchAlias(nickname: String) {
+        val errorMessageProvider = ErrorMessageProvider(context)
+
         viewModelScope.launch(Dispatchers.IO) {
             _state.value = GithubStateUI.Loading
             val result = usecase.invoke(nickname)
@@ -33,19 +39,11 @@ class GitHubViewModel(
                         user -> _state.value = GithubStateUI.Success( user )
                 },
                 onFailure = {
-                        error -> _state.value = GithubStateUI.Error(message = error.message ?: "Error desconocido")
+                    val message = errorMessageProvider.getMessage(it as Failure)
+
+                    _state.value = GithubStateUI.Error(message = message)
                 }
             )
-
-//            when {
-//                result.isSuccess -> {
-//                    val user = result.getOrNull()
-//                    _state.value = GithubStateUI.Success( user!! )
-//                }
-//                result.isFailure -> {
-//                    _state.value = GithubStateUI.Error(message = "Error")
-//                }
-//            }
         }
     }
 

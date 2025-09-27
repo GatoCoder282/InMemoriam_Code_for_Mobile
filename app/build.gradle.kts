@@ -1,4 +1,7 @@
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,12 +10,15 @@ plugins {
     alias(libs.plugins.sentry)
     alias(libs.plugins.detekt)
     alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.ksp)
 }
 sentry {
     autoUploadProguardMapping = true }
 detekt {
     parallel = true
 }
+
+
 
 ktlint {
     android = true
@@ -82,7 +88,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.firebase.database)
-    implementation(libs.androidx.room.ktx)
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -101,5 +107,14 @@ dependencies {
     runtimeOnly("io.sentry:sentry-android:8.19.1")
     implementation("androidx.compose.ui:ui-text-google-fonts:1.6.8")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation(libs.bundles.local)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
+    testImplementation(libs.room.testing)
 
+    implementation(libs.datastore)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.gson)
 }

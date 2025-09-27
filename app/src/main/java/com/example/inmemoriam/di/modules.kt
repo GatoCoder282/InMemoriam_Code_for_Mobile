@@ -1,11 +1,11 @@
 package com.example.inmemoriam.di
 
-import com.example.inmemoriam.features.dollar.data.DollarRepository
+import com.example.inmemoriam.features.dollar.data.repository.DollarRepository
 import com.example.inmemoriam.features.dollar.domain.repository.IDollarRepository
 import com.example.inmemoriam.features.dollar.domain.usecase.FetchDollarUseCase
 import com.example.inmemoriam.features.dollar.presentation.DollarViewModel
 import com.example.inmemoriam.features.githubEjemplo.data.repository.GithubRepository
-import com.example.inmemoriam.features.githubEjemplo.domain.repository.IdGitHubRepository
+import com.example.inmemoriam.features.githubEjemplo.domain.repository.IGithubRepository
 import com.example.inmemoriam.features.githubEjemplo.domain.usecase.FindPhotobyNickNameUseCase
 import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubViewModel
 import com.example.inmemoriam.features.guestInMemoriam.data.repository.GuestInMemoriamRepository
@@ -29,7 +29,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single<IdGitHubRepository>{ GithubRepository() }
+    single<IGithubRepository>{ GithubRepository() }
     factory { FindPhotobyNickNameUseCase(get()) }
     viewModel { GitHubViewModel(get()) }
 

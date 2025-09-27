@@ -56,10 +56,6 @@ fun AppNavigation() {
 
         }
 
-
-        composable(Screen.CardEjemplo.route) { CardScreen() }
-
-
         composable(Screen.Dollar.route) {
             DollarScreen()
         }

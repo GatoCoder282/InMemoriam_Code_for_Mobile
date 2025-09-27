@@ -2,6 +2,7 @@ package com.example.inmemoriam.features.dollar.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,8 +24,8 @@ fun DollarScreen(viewModelDollar: DollarViewModel = koinViewModel()) {
             is DollarViewModel.DollarUIState.Error -> Text(stateValue.message)
             DollarViewModel.DollarUIState.Loading -> CircularProgressIndicator()
             is DollarViewModel.DollarUIState.Success -> {
-                Text(stateValue.data.dollarOfficial)
-                Text(stateValue.data.dollarParelelo)
+                Text(stateValue.data.dollarvalue)
+                Text(stateValue.data.dollarvalueParalelo)
             }
         }
     }

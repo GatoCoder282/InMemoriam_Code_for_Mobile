@@ -36,5 +36,10 @@
     <string name="search_hint">Buscar perfiles...</string>
     <string name="error_message">Ocurrió un error. Intenta de nuevo.</string>
     <string name="success_message">¡Guardado con éxito!</string>
+    <string name="error_network">No se puede conectar a internet. Por favor verifica tu conexion.</string>
+    <string name="error_server">Ocurrio un error de servidor. Por favor intenta de nuevo en un momento.</string>
+    <string name="error_not_found">Usuario no encontrado.</string>
+    <string name="error_empty_response">Ninguna respuesta recibida del servidor.</string>
+    <string name="error_unknown">Error inesperado acaba de ocurrir. Por favor intenta de nuevo.</string>
 </resources>
 

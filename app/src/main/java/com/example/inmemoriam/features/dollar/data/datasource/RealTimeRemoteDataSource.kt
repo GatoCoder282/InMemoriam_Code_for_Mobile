@@ -1,4 +1,4 @@
-package com.example.inmemoriam.features.dollar.datasource
+package com.example.inmemoriam.features.dollar.data.datasource
 
 import com.example.inmemoriam.features.dollar.domain.model.DollarModel
 import com.google.firebase.Firebase
@@ -11,7 +11,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
 class RealTimeRemoteDataSource {
-
 
     suspend fun getDollarUpdates(): Flow<DollarModel> = callbackFlow {
         val callback = object : ValueEventListener {
@@ -28,12 +27,10 @@ class RealTimeRemoteDataSource {
             }
         }
 
-
 //         Write a message to the database
         val database = Firebase.database
         val myRef = database.getReference("dollar")
         myRef.addValueEventListener(callback)
-
 
         awaitClose {
             myRef.removeEventListener(callback)
