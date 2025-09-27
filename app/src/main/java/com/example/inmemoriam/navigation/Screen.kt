@@ -4,11 +4,10 @@ sealed class Screen(val route: String) {
     object Home: Screen("home")
     object Github: Screen("github")
     object Profile: Screen("profile")
-
-    object CardEjemplo : Screen("card")
+    object Movie: Screen("movie")
+    object CardEjemplo: Screen("card")
     object Dollar: Screen("dollar")
-
-
 }
+
 
 

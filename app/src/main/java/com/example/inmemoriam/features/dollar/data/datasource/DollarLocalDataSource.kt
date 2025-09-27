@@ -27,4 +27,12 @@ class DollarLocalDataSource(
         dao.insert(dollar.toEntity())
     }
 
+    suspend fun getAllOrderedByDate(): List<DollarModel> {
+        return dao.getAllOrderedByDate().map { it.toModel() }
+    }
+
+    suspend fun deleteById(id: Int) {
+        dao.deleteById(id)
+    }
+
 }

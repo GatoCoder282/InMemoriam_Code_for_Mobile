@@ -23,4 +23,11 @@ interface IDollarDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertDollars(lists: List<DollarEntity>)
+
+    @Query("SELECT * FROM dollar ORDER BY timestamp DESC")
+    suspend fun getAllOrderedByDate(): List<DollarEntity>
+
+
+    @Query("DELETE FROM dollar WHERE id = :id")
+    suspend fun deleteById(id: Int)
 }

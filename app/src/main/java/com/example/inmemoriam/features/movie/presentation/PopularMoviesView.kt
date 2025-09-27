@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,9 +20,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.inmemoriam.features.movie.domain.model.MovieModel
-
 @Composable
-fun PopularMoviesView( movies: List<MovieModel>) {
+fun PopularMoviesView(
+    movies: List<MovieModel>,
+    onLikeClicked: (MovieModel) -> Unit
+) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -28,13 +32,17 @@ fun PopularMoviesView( movies: List<MovieModel>) {
         contentPadding = PaddingValues(16.dp)
     ) {
         items(movies.size) {
-            CardMovie(movie = movies[it])
+            CardMovie(movie = movies[it], onLikeClicked = onLikeClicked)
         }
     }
 }
 
+
 @Composable
-fun CardMovie(movie: MovieModel) {
+fun CardMovie(
+    movie: MovieModel,
+    onLikeClicked: (MovieModel) -> Unit
+) {
     OutlinedCard(
         modifier = Modifier
             .padding(4.dp)
@@ -64,6 +72,16 @@ fun CardMovie(movie: MovieModel) {
                     .fillMaxWidth(),
                 maxLines = 2
             )
+
+            androidx.compose.material3.IconButton(onClick = { onLikeClicked(movie) }) {
+                androidx.compose.material3.Icon(
+                    imageVector = if (movie.isLiked)
+                        androidx.compose.material.icons.Icons.Default.Favorite
+                    else
+                        androidx.compose.material.icons.Icons.Default.FavoriteBorder,
+                    contentDescription = "Like"
+                )
+            }
         }
     }
 }

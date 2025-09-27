@@ -21,11 +21,15 @@ fun PopularMoviesScreen(
         is PopularMoviesViewModel.UiState.Error -> {
             Text(s.message)
         }
+
         is PopularMoviesViewModel.UiState.Loading ->
             CircularProgressIndicator()
-        is PopularMoviesViewModel.UiState.Success ->
-            PopularMoviesView(movies = s.movies)
 
+        is PopularMoviesViewModel.UiState.Success ->
+            PopularMoviesView(
+                movies = s.movies,
+                onLikeClicked = { movie -> popularMoviesViewModel.toggleLike(movie) }
+            )
     }
 
 }

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubScreen
 import com.example.inmemoriam.navigation.AppNavigation
 import com.example.inmemoriam.ui.theme.InMemoriamTheme
 
@@ -18,12 +17,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             InMemoriamTheme {
-                /*Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    GitHubScreen(modifier = Modifier.padding(paddingValues = innerPadding))
-                }*/
-                AppNavigation()
+                AppNavigation()  // muestra tu navegación completa
             }
         }
     }
 }
+
 

@@ -7,57 +7,38 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.inmemoriam.features.dollar.presentation.DollarScreen
-import com.example.inmemoriam.features.githubEjemplo.presentation.GitHubScreen
+import com.example.inmemoriam.features.githubEjemplo.presentation.GithubScreen
 import com.example.inmemoriam.ui.components.CardScreen
 import com.example.inmemoriam.features.loginejemplo.presentation.LoginScreen
-
-/*
-@Composable
-fun AppNavigation() {
-    val navController: NavHostController = rememberNavController()
-
-    NavHost(
-        navController = navController,
-        startDestination = Screen.CardEjemplo.route
-    ) {
-        composable(Screen.Github.route) {
-            GitHubScreen(modifier = Modifier)
-        }
-        composable(Screen.Home.route) {
-
-        }
-        composable(Screen.Profile.route) {
-
-        }
-        composable (Screen.CardEjemplo.route){
-            CardScreen()
-        }
-    }
-}*/
+import com.example.inmemoriam.features.movie.presentation.PopularMoviesScreen
+import com.example.inmemoriam.features.profile.application.ProfileScreen
 
 @Composable
 fun AppNavigation() {
     val navController: NavHostController = rememberNavController()
-
 
     NavHost(
         navController = navController,
         startDestination = Screen.Dollar.route
     ) {
-        composable(Screen.Github.route) {
-            GitHubScreen(modifier = Modifier)
-        }
-        composable(Screen.Home.route) {
-
-
-        }
-        composable(Screen.Profile.route) {
-            LoginScreen()
-
-        }
-
         composable(Screen.Dollar.route) {
-            DollarScreen()
+            DollarScreen()  // ya configurado
+        }
+
+        composable(Screen.Movie.route) {
+            PopularMoviesScreen()  // pantalla de películas
+        }
+
+        composable(Screen.Profile.route) {
+            ProfileScreen()  // pantalla de perfil
+        }
+
+        composable(Screen.Github.route) {
+            GithubScreen(modifier = Modifier)
+        }
+
+        composable(Screen.Home.route) {
+            // aquí podrías agregar un Dashboard o pantalla principal
         }
     }
 }

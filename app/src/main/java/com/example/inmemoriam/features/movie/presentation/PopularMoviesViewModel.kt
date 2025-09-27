@@ -2,6 +2,7 @@ package com.example.inmemoriam.features.movie.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.inmemoriam.features.movie.data.repository.MovieRepository
 import com.example.inmemoriam.features.movie.domain.model.MovieModel
 import com.example.inmemoriam.features.movie.domain.usecase.FetchPopularMoviesUseCase
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +13,8 @@ import kotlinx.coroutines.launch
 
 
 class PopularMoviesViewModel(
-    private val fetchPopularMovies: FetchPopularMoviesUseCase
+    private val fetchPopularMovies: FetchPopularMoviesUseCase,
+    private val repository: MovieRepository
 ): ViewModel() {
 
     sealed class UiState {
@@ -30,12 +32,20 @@ class PopularMoviesViewModel(
             val result = fetchPopularMovies.invoke()
             result.fold(
                 onSuccess = {
-                    _state.value = UiState.Success(it)
+                    _state.value = UiState.Success(it.sortedByDescending { movie -> movie.isLiked })
                 },
                 onFailure = {
                     _state.value = UiState.Error("error")
                 }
             )
+        }
+    }
+
+
+    fun toggleLike(movie: MovieModel) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.likeMovie(movie)
+            fetchPopularMovies()
         }
     }
 }

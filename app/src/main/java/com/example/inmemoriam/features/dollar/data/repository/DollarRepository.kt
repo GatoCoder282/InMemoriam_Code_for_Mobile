@@ -14,9 +14,6 @@ class DollarRepository(
 ): IDollarRepository {
 
     override suspend fun getDollar(): Flow<DollarModel> {
-//        return flow {
-//            emit(DollarModel("123", "456"))
-//        }
         return realTimeRemoteDataSource.getDollarUpdates()
             .onEach {
                 localDataSource.insert(it)
